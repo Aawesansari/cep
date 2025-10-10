@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About Us - Our Team</title>
     <style>
         * {
             margin: 0;
@@ -13,142 +13,225 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            line-height: 1.6;
+            color: #333;
+            background: #f0f4f8;
             min-height: 100vh;
-            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            background: linear-gradient(135deg, #2d5016 0%, #4a7c26 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b8e994;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
         }
 
         h1 {
             text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
         }
 
-        .cards-grid {
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .card {
+        .team-card {
             position: relative;
-            height: 400px;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 400px;
         }
 
-        .card:hover {
+        .team-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
         }
 
-        .card-image {
+        .team-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            background: linear-gradient(135deg, #4a7c26 0%, #78b944 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
         }
 
-        .card:hover .card-image {
-            transform: scale(1.1);
+        .team-photo img{
+            width: 370px;
         }
 
-        .card-overlay {
+        .team-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
-            padding: 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 70%, transparent 100%);
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(0);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover .team-overlay {
+            transform: translateY(-10px);
+        }
+
+        .team-name {
             color: white;
-        }
-
-        .card-title {
-            font-size: 1.8em;
+            font-size: 1.4rem;
             font-weight: bold;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 0.5rem;
         }
 
-        .card-description {
-            font-size: 1em;
-            line-height: 1.5;
-            opacity: 0.9;
+        .team-roll {
+            color: #b8e994;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
         }
 
-        .card-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255,255,255,0.9);
-            color: #333;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: bold;
-            text-transform: uppercase;
+
+        footer {
+            background: #2d5016;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .team-card {
+                height: 350px;
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+
+        </ul>
+    </nav>
+
     <div class="container">
-        <h1>Who Are We?</h1>
-        <div class="cards-grid">
-            <div class="card">
-                <img src="Cimg/First.png" alt="Mountain Landscape" class="card-image">
-                <div class="card-tag">SE</div>
-                <div class="card-overlay">
-                    <div class="card-title">Awes Ansari</div>
-                    <div class="card-description">SE - 03</div>
+        <h1>Meet Our Team</h1>
+        <p class="subtitle">Dedicated students from S.N.D. College of Engineering, Yeola working towards a sustainable future</p>
+
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-card">
+                <div class="team-photo"><img src="Team/aaves.jpeg" alt=""></div>
+                <div class="team-overlay">
+                    <div class="team-name">Awes Ansari</div>
+                    <div class="team-roll">Roll No: 03</div>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&h=800&fit=crop" alt="Starry Night" class="card-image">
-                <div class="card-tag">SE</div>
-                <div class="card-overlay">
-                    <div class="card-title">Shubham Ghorpade</div>
-                    <div class="card-description">SE - 11</div>
+            <!-- Team Member 2 -->
+            <div class="team-card">
+                <div class="team-photo"><img src="Team/prem.jpeg" alt=""></div>
+                <div class="team-overlay">
+                    <div class="team-name">Prem Bhujang</div>
+                    <div class="team-roll">Roll No: 06</div>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=800&fit=crop" alt="Lake Sunset" class="card-image">
-                <div class="card-tag">SE</div>
-                <div class="card-overlay">
-                    <div class="card-title">Nilesh Dikale</div>
-                    <div class="card-description">SE - 00</div>
+            <!-- Team Member 3 -->
+            <div class="team-card">
+                <div class="team-photo"><img src="Team/prem.jpeg" alt=""></div>
+                <div class="team-overlay">
+                    <div class="team-name">Shubham Ghorpade</div>
+                    <div class="team-roll">Roll No: 11</div>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=600&h=800&fit=crop" alt="Desert Dunes" class="card-image">
-                <div class="card-tag">SE</div>
-                <div class="card-overlay">
-                    <div class="card-title">Prem Bhujang</div>
-                    <div class="card-description">SE - 09</div>
+            <!-- Team Member 4 -->
+            <div class="team-card">
+                <div class="team-photo"><img src="Team/prem.jpeg" alt=""></div>
+                <div class="team-overlay">
+                    <div class="team-name">Nilesh Dikale</div>
+                    <div class="team-roll">Roll No: 00</div>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=800&fit=crop" alt="Forest Path" class="card-image">
-                <div class="card-tag">SE</div>
-                <div class="card-overlay">
-                    <div class="card-title">Vikas Barde</div>
-                    <div class="card-description">SE - 04</div>
+            <!-- Team Member 5 -->
+            <div class="team-card">
+                <div class="team-photo"><img src="Team/prem.jpeg" alt=""></div>
+                <div class="team-overlay">
+                    <div class="team-name">Vikas Barde</div>
+                    <div class="team-roll">Roll No: 04</div>
                 </div>
             </div>
+
+            
+
+            <!-- Add more team members as needed -->
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2025 Soil Conservation Project | S.N.D. College of Engineering, Yeola</p>
+        <p style="margin-top: 0.5rem;">Securing Our Ground, One Tree at a Time</p>
+    </footer>
 </body>
 </html>
