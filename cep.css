@@ -282,7 +282,7 @@ footer p {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  width: 300px;
+  width: 400px;
   text-align: center;
   position: relative;
   animation: fadeIn 0.3s ease-in-out;
@@ -325,3 +325,4 @@ footer p {
         display: none; /* Simplification for mobile; can be replaced with a hamburger menu */
     }
 }
+
