@@ -61,11 +61,18 @@ nav {
     margin: 0 auto;
 }
 
+nav img{
+    max-width: 40px;
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary-color);
+    align-items: center;
+    display: flex;
 }
+
 
 .nav-links {
     list-style: none;
@@ -325,4 +332,5 @@ footer p {
         display: none; /* Simplification for mobile; can be replaced with a hamburger menu */
     }
 }
+
 
