@@ -62,7 +62,7 @@ nav {
 }
 
 nav img{
-    max-width: 40px;
+    max-width: 50px;
 }
 
 .logo {
@@ -331,5 +331,6 @@ footer p {
         display: none; /* Simplification for mobile; can be replaced with a hamburger menu */
     }
 }
+
 
 
