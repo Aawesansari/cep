@@ -73,7 +73,6 @@ nav img{
     display: flex;
 }
 
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -332,5 +331,3 @@ footer p {
         display: none; /* Simplification for mobile; can be replaced with a hamburger menu */
     }
 }
-
-
